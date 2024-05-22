@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="My Gradient Generator">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gradient Generator</title>
 
@@ -14,7 +15,13 @@
         }
 
         html {
-            font-size: 0.938em;
+            font-size: 1.2em;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         body {
@@ -35,11 +42,12 @@
 
         #myButton1, #myButton2 {
             height: 3rem;
-            width: 8rem;
+            width: 10rem;
             border: none;
             border-radius: 30px;
-            font-size: 15px;
-            box-shadow: #0000003d 0px 3px 8px;
+            font-size: 20px;
+            box-shadow: rgba(0, 0, 0, 0.24) 3px 8px 8px;
+            margin: 0 20px;
         }
 
         #myButton1 {
@@ -49,6 +57,27 @@
 
         #myButton2 {
             background-color: #a8eb12;
+        }
+
+        h2 {
+            font-weight: 500;
+            font-size: 25px;
+            color: #fff;
+            padding-top: 20px;
+        }
+
+        .copyCode {
+            color: #fff;
+            background-color: transparent;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+            display: inline-flex;
+            align-items: center;
+            width: 72%;
+            height: 80px;
+            margin-top: 20px;
+            padding: 12px 12px;
+            border-left: 2px solid white;
+            border-radius: 8px;
         }
 
     </style>
@@ -69,16 +98,13 @@
 
 
 
-    <!-- SCRIPT tag -->
+    <!-- STYLE tag -->
     <script>
         let btn1 = document.getElementById("myButton1");
         let btn2 = document.getElementById("myButton2");
         let copyDiv = document.querySelector(".copyCode");
-        let rgb1 = #000;
-        let rgb2 = #fff;
-
-        btn1.addEventListener("click", handleButton1);
-        btn2.addEventListener("click", handleButton2);
+        let rgb1 = "#051937";
+        let rgb2 = "#008793";
 
         const hexValues = () => {
             let myHexaValue = "0123456789abcdef";
@@ -105,9 +131,13 @@
             copyDiv.innerHTML = `background-image : linear-gradient(to right, ${rgb1}, ${rgb2})`;
         }
 
+        btn1.addEventListener("click", handleButton1);
+        btn2.addEventListener("click", handleButton2);
+
         copyDiv.addEventListener("click", () => {
             navigator.clipboard.writeText(copyDiv.innerText);
         })
     </script>
 </body>
 </html>
+
